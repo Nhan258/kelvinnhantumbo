@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio Profissional de Kelvin Salvador Lemos Nhantumbo - Especialista em Suporte Informático, Técnico de Eletrónica/Eletricidade e Músico/Guitarrista.">
+    <title>Kelvin Nhantumbo | Portfólio Profissional</title>
+    <style>
+        /* =========================
+            CONFIGURAÇÕES GERAIS E VARIÁVEIS
+        ========================= */
+        :root {
+            --bg-main: #070b18;
+            --bg-secondary: #0d1326;
+            --bg-card: #111827;
+            --border-color: #24304a;
+            --primary: #38bdf8;
+            --primary-dark: #2563eb;
+            --accent: #a78bfa;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --text-light: #cbd5e1;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 100px 8%;
+            scroll-margin-top: 80px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatGlow {
+            0%, 100% {
+                box-shadow: 0 0 25px var(--primary-dark), 0 0 70px rgba(124, 58, 237, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 35px var(--primary), 0 0 90px rgba(124, 58, 237, 0.6);
+            }
+        }
+
+        .hero, .about, .skills, .education, .projects, .music, .contact {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        /* =========================
+            HEADER
+        ========================= */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 11, 24, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 18px 8%;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            transition: var(--transition);
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================
+            HERO
+        ========================= */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            background: 
+                radial-gradient(circle at top right, rgba(18, 60, 117, 0.4), transparent 45%),
+                linear-gradient(135deg, #060914, #101936);
+        }
+
+        .hero-text {
+            max-width: 680px;
+        }
+
+        .hero-text span {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(38px, 5.5vw, 68px);
+            line-height: 1.12;
+            margin: 10px 0 16px 0;
+            background: linear-gradient(90deg, #ffffff, var(--text-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text h2 {
+            color: var(--accent);
+            font-size: 24px;
+            margin-bottom: 22px;
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            color: var(--text-light);
+            font-size: 17px;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-dark);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: #07101f;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .hero-photo {
+            width: 380px;
+            height: 380px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+            animation: floatGlow 5s ease-in-out infinite;
+            transition: var(--transition);
+        }
+
+        .hero-photo img:hover {
+            transform: scale(1.03);
+        }
+
+        /* =========================
+            TÍTULOS DAS SECÇÕES
+        ========================= */
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            color: var(--primary);
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -10px;
+            left: 25%;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        /* =========================
+            SOBRE MIM
+        ========================= */
+        .about {
+            background: var(--bg-secondary);
+        }
+
+        .about-card {
+            max-width: 1100px;
+            margin: auto;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .about-photo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .about-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+            filter: brightness(0.95) contrast(1.05);
+        }
+
+        .about-photo-wrapper:hover {
+            border-color: var(--primary);
+            box-shadow: 0 12px 35px rgba(56, 189, 248, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .about-photo-wrapper:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            font-size: 17px;
+            margin-bottom: 22px;
+            text-align: justify;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+            HABILIDADES
+        ========================= */
+        .skills {
+            background: var(--bg-main);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .skill {
+            background: var(--bg-card);
+            padding: 32px 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            text-align: left;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 35px rgba(56, 189, 248, 0.15);
+            background: #141f33;
+        }
+
+        .skill:hover::before {
+            opacity: 1;
+        }
+
+        .skill h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .skill p {
+            color: var(--text-muted);
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* =========================
+            FORMAÇÃO / ESCOLAS
+        ========================= */
+        .education {
+            background: var(--bg-secondary);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .education-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+        }
+
+        .edu-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #1e293b;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .edu-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .education-card:hover .edu-image-container img {
+            transform: scale(1.05);
+        }
+
+        .edu-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .edu-content h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .edu-content p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 18px;
+            flex-grow: 1;
+            text-align: justify;
+        }
+
+        .edu-status {
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--accent) !important;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .edu-btn {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* =========================
+            PROJETOS
+        ========================= */
+        .projects {
+            background: var(--bg-main);
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #1e293b;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image-container img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 18px;
+            flex-grow: 1;
+            text-align: justify;
+        }
+
+        .project-tag {
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--accent) !important;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* =========================
+            MÚSICA & REDES SOCIAIS
+        ========================= */
+        .music {
+            background: var(--bg-secondary);
+        }
+
+        .music-intro {
+            max-width: 950px;
+            margin: 0 auto 45px auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-intro h3 {
+            color: var(--accent);
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .music-intro p {
+            color: var(--text-light);
+            font-size: 16px;
+            margin-bottom: 18px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .music-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .music-inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 950px;
+            margin: 0 auto 45px auto;
+        }
+
+        .inspiration-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 28px;
+            transition: var(--transition);
+        }
+
+        .inspiration-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .inspiration-card h4 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .inspiration-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .inspiration-list li {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .inspiration-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .music-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 45px auto;
+        }
+
+        .music-media-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .music-media-card h4 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .photo-gallery-grid-two {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-slot {
+            height: 220px;
+            background: #141f33;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .gallery-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .gallery-slot img:hover {
+            transform: scale(1.06);
+        }
+
+        .video-slot {
+            width: 100%;
+            height: 220px;
+            background: #141f33;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .video-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.65;
+            transition: var(--transition);
+        }
+
+        .video-slot:hover img {
+            transform: scale(1.05);
+        }
+
+        .video-slot-label {
+            position: relative;
+            z-index: 2;
+            background: rgba(7, 11, 24, 0.85);
+            padding: 8px 14px;
+            border-radius: 6px;
+            color: var(--text-main);
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .social-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .social-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+        }
+
+        .social-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #141f33;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .social-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .social-card:hover .social-image-container img {
+            transform: scale(1.05);
+        }
+
+        /* =========================
+            CONTACTO
+        ========================= */
+        .contact {
+            background: var(--bg-main);
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin: 25px 0;
+            padding: 16px 30px;
+            background: var(--bg-card);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .contact-email:hover {
+            background: var(--primary);
+            color: #07101f;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+        }
+
+        /* =========================
+            BOTÕES FLUTUANTES (WHATSAPP & INSTAGRAM)
+        ========================= */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .float-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.12) translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+        }
+
+        .btn-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+
+        .btn-instagram:hover {
+            filter: brightness(1.1);
+        }
+
+        /* =========================
+            FOOTER
+        ========================= */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #04060d;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-size: 15px;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 50px;
+                min-height: auto;
+            }
+            .hero-photo {
+                width: 280px;
+                height: 280px;
+                margin: 0 auto;
+            }
+            .buttons {
+                justify-content: center;
+            }
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            .float-btn {
+                width: 48px;
+                height: 48px;
+            }
+            .float-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+            .about-card {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+                gap: 30px;
+            }
+            .about-photo-wrapper {
+                max-width: 280px;
+                height: 320px;
+                margin: 0 auto;
+            }
+            .about-text, .music-intro, .skill {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =========================
+    HEADER
+========================= -->
+<header>
+    <div class="logo">
+        Kelvin Nhantumbo
+    </div>
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#about">Sobre Mim</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#education">Formação</a>
+        <a href="#projects">Projetos</a>
+        <a href="#music">Música & Redes</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<!-- =========================
+    HERO
+========================= -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>
+            Kelvin Salvador<br>
+            Lemos Nhantumbo
+        </h1>
+        <h2>
+            Técnico de Suporte Informático & Músico
+        </h2>
+        <p>
+            Engenhosidade técnica, paixão pela inovação e sensibilidade artística interligadas num único percurso. Dedico-me à resolução de problemas complexos de infraestrutura tecnológica, administração de sistemas, manutenção de hardware e redes de computadores, aliando o rigor do suporte técnico à criatividade e disciplina da performance musical.
+        </p>
+        <div class="buttons">
+            <a class="btn btn-primary" href="#contact">
+                Entrar em Contacto
+            </a>
+            <a class="btn btn-secondary" href="#about">
+                Explorar Trajetória
+            </a>
+        </div>
+    </div>
+    <div class="hero-photo">
+        <img
+            src="Meus jogos/KELVIN FERRARI.jpeg"
+            alt="Foto Profissional de Kelvin Salvador Lemos Nhantumbo"
+        >
+    </div>
+</section>
+
+<!-- =========================
+    SOBRE MIM
+========================= -->
+<section class="about" id="about">
+    <div class="section-title">
+        <h2>Sobre Mim</h2>
+        <p>Uma visão detalhada sobre a minha jornada, valores e objetivos profissionais</p>
+    </div>
+    <div class="about-card">
+        <div class="about-photo-wrapper">
+            <img src="Meus jogos/Nhantumbok.jpeg" alt="Foto de Perfil Kelvin Salvador Lemos Nhantumbo">
+        </div>
+        <div class="about-text">
+            <p>
+                Chamo-me <strong>Kelvin Salvador Lemos Nhantumbo</strong> e sou um entusiasta movido pela curiosidade contínua e pelo desejo constante de evolução. Atualmente, estou a consolidar a minha formação no nível de Qualificação Profissional CV4 em <strong>Suporte Informático</strong> no Instituto de Transportes e Comunicações (ITC), após ter concluído com distinção o curso técnico de <strong>Eletricidade Industrial</strong> na mesma instituição. Essa base multidisciplinar permite-me transitar com facilidade entre a infraestrutura elétrica física e os ambientes lógicos da informática de ponta.
+            </p>
+            <p>
+                A minha paixão pelo universo da tecnologia manifesta-se no interesse profundo por diagnóstico e manutenção de sistemas informáticos, arquitetura e segurança de redes, montagem de infraestruturas físicas de TI e desenvolvimento web com foco na usabilidade e performance. Acredito firmemente que a tecnologia deve servir como uma ferramenta transformadora para simplificar processos, otimizar tarefas e criar soluções acessíveis para empresas e indivíduos.
+            </p>
+            <p>
+                Paralelamente ao mundo técnico, a música desempenha um papel fulcral na minha vida. Sou guitarrista, intérprete e compositor. A prática da guitarra ensinou-me virtudes essenciais que aplico diretamente na engenharia e no suporte de TI: o foco meticuloso nos detalhes, a paciência necessária para dominar processos complexos e a capacidade de trabalhar em harmonia dentro de uma equipa. Seja a estruturar um cabo de rede ou a arranjar uma linha de guitarras para Kompa ou Rock, coloco sempre o máximo de rigor e dedicação no que faço.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+    HABILIDADES
+========================= -->
+<section class="skills" id="skills">
+    <div class="section-title">
+        <h2>Minhas Habilidades & Competências</h2>
+        <p>Um panorama detalhado das minhas aptidões técnicas e tecnológicas</p>
+    </div>
+    <div class="skills-container">
+        <div class="skill">
+            <h3>HTML5 & Semântica Web</h3>
+            <p>Construção de estruturas web sólidas, acessíveis e otimizadas para motores de busca (SEO). Aplicação rigorosa das boas práticas de desenvolvimento semântico para garantir acessibilidade e legibilidade de código em múltiplos navegadores.</p>
+        </div>
+        <div class="skill">
+            <h3>CSS3 & Estilização Avançada</h3>
+            <p>Criação de interfaces visuais modernas, responsivas e intuitivas. Domínio de conceitos como Flexbox, CSS Grid, animações fluidas, variáveis CSS e design adaptável para smartphones, tablets e computadores de secretária.</p>
+        </div>
+        <div class="skill">
+            <h3>Suporte Informático & Hardware</h3>
+            <p>Diagnóstico avançado de falhas físicas e lógicas, assemblagem e reparação de hardware, otimização do desempenho de computadores, instalação de sistemas operativos (Windows/Linux) e gestão de cópias de segurança (backups).</p>
+        </div>
+        <div class="skill">
+            <h3>Redes de Computadores</h3>
+            <p>Conhecimentos em arquitetura de redes local (LAN) e alargada (WAN), cablagem estruturada, configuração de routers e switches, atribuição de endereços IP/Sub-redes, diagnostico de conetividade e fundamentos de segurança cibernética.</p>
+        </div>
+        <div class="skill">
+            <h3>Eletricidade Industrial & Automação</h3>
+            <p>Domínio técnico em leituras de esquemas elétricos, montagem de quadros de distribuição, manutenção preventiva e corretiva de circuitos trifásicos e monofásicos, respeitando sempre as normas internacionais de segurança e eficiência energética.</p>
+        </div>
+        <div class="skill">
+            <h3>Desenvolvimento Web & Identidade Digital</h3>
+            <p>Conceção e implementação de projetos web funcionais para pequenas empresas e iniciativas pessoais. Integração de estratégias de presença digital, design UI/UX focado no utilizador e gestão de conteúdos online.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+    FORMAÇÃO (PERCURSO ESCOLAR)
+========================= -->
+<section class="education" id="education">
+    <div class="section-title">
+        <h2>Minha Formação & Percurso Escolar</h2>
+        <p>As instituições de ensino que moldaram o meu conhecimento técnico e académico</p>
+    </div>
+    <div class="education-grid">
+        <!-- Colégio Arco-Íris -->
+        <article class="education-card">
+            <div class="edu-image-container">
+                <img src="Meus jogos/Arcoiris.webp" alt="Colégio Arco-Íris">
+            </div>
+            <div class="edu-content">
+                <h3>Colégio Arco-Íris</h3>
+                <p>Etapa fundamental de formação primária onde desenvolvi os primeiros conceitos cívicos, capacidades de raciocínio lógico, leitura e princípios morais que norteiam toda a minha vida académica e pessoal.</p>
+                <span class="edu-status">Concluído</span>
+                <a href="https://www.instagram.com/colegio.arcoiris93?stkn=NzZkOXM3NWU5eDln" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Página</a>
+            </div>
+        </article>
+
+        <!-- Escola Secundária das Acácias -->
+        <article class="education-card">
+            <div class="edu-image-container">
+                <img src="Meus jogos/ESDA.webp" alt="Escola Secundária das Acácias">
+            </div>
+            <div class="edu-content">
+                <h3>Escola Secundária das Acácias</h3>
+                <p>Fase crucial no ensino secundário geral, marcada pelo aprofundamento de disciplinas das ciências exatas como Matemática e Física, estimulando a minha vocação pelas áreas técnicas e tecnológicas.</p>
+                <span class="edu-status">Concluído</span>
+                <a href="https://www.facebook.com/share/1Bxq1AWiy2/?mibextid=wwXIfr" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Página</a>
+            </div>
+        </article>
+
+        <!-- Escola Secundária ISCTEM -->
+        <article class="education-card">
+            <div class="edu-image-container">
+                <img src="Meus jogos/ISCTEM.webp" alt="Escola Secundária ISCTEM">
+            </div>
+            <div class="edu-content">
+                <h3>Escola Secundária ISCTEM</h3>
+                <p>Consolidação da preparação académica pré-universitária, participando em debates, projetos escolares dinâmicos e reforçando hábitos de estudo autónomo e trabalho em equipa.</p>
+                <span class="edu-status">Concluído</span>
+                <a href="https://isctem.ac.mz/escola-secundaria/" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Página</a>
+            </div>
+        </article>
+
+        <!-- ITC - Eletricidade Industrial -->
+        <article class="education-card">
+            <div class="edu-image-container">
+                <img src="Meus jogos/ITCCV4.webp" alt="ITC - Eletricidade Industrial">
+            </div>
+            <div class="edu-content">
+                <h3>ITC - Eletricidade Industrial</h3>
+                <p>Formação técnica profissional focada em instalações elétricas de média e baixa tensão, motores elétricos, sistemas de proteção, leitura de diagramas industriais e rigor de segurança no trabalho.</p>
+                <span class="edu-status">Concluído</span>
+                <a href="https://www.itc.ac.mz" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Página</a>
+            </div>
+        </article>
+
+        <!-- ITC - Suporte Informático -->
+        <article class="education-card">
+            <div class="edu-image-container">
+                <img src="Meus jogos/ITCCV4.webp" alt="ITC - Suporte Informático">
+            </div>
+            <div class="edu-content">
+                <h3>ITC - Suporte Informático (CV4)</h3>
+                <p>Especialização profissional em andamento focada em gestão de helpdesk, manutenção de sistemas operativos, implementação e diagnóstico de redes locais, segurança da informação e apoio ao utilizador.</p>
+                <span class="edu-status">Em Curso</span>
+                <a href="https://www.itc.ac.mz" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Página</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- =========================
+    PROJETOS
+========================= -->
+<section class="projects" id="projects">
+    <div class="section-title">
+        <h2>Meus Projetos & Trabalhos Práticos</h2>
+        <p>Iniciativas, relatórios e soluções desenvolvidas ao longo da minha trajetória</p>
+    </div>
+    <div class="project-container">
+        <!-- Projeto 1 -->
+        <article class="project-card">
+            <div class="project-image-container">
+                <img src="Meus jogos/Portifolio.png" alt="Portfólio Pessoal">
+            </div>
+            <div class="project-content">
+                <h3>Portfólio Pessoal Interativo</h3>
+                <p>Desenvolvimento completo de uma plataforma web responsiva, otimizada para apresentar de forma clara e elegante a minha trajetória profissional, competências técnicas e produções artísticas utilizando código HTML5 e CSS3 moderno.</p>
+                <span class="project-tag">Web Design & Frontend</span>
+                <a href="#" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+            </div>
+        </article>
+
+        <!-- Projeto 2 -->
+        <article class="project-card">
+            <div class="project-image-container">
+                <img src="Meus jogos/Kelvtech.png" alt="Kelv Tech Lab">
+            </div>
+            <div class="project-content">
+                <h3>Kelv Tech Lab</h3>
+                <p>Criação e estruturação do portal do meu laboratório e iniciativa pessoal de tecnologia. O projeto oferece diagnósticos técnicos, dicas de manutenção de computadores, consultoria de suporte e criação de identidades digitais funcionais.</p>
+                <span class="project-tag">Tecnologia & Consultoria</span>
+                <a href="https://sites.google.com/view/kelvtechlab/in%C3%ADcio" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+            </div>
+        </article>
+
+        <!-- Projeto 3 -->
+        <article class="project-card">
+            <div class="project-image-container">
+                <img src="Meus jogos/Projeto integrado.png" alt="Manutenção de Sistemas">
+            </div>
+            <div class="project-content">
+                <h3>Projeto Integrado de Eletricidade</h3>
+                <p>Elaboração de um estudo completo e proposta de intervenção para otimização da infraestrutura elétrica residencial, prevendo dimensionamento de condutores, sistemas de proteção contra sobrecargas e eficiência na iluminação.</p>
+                <span class="project-tag">Infraestrutura Elétrica</span>
+                <a href="https://docs.google.com/document/d/1r_554uVVamZdOd__Maz83KLBsRK7at0q/edit?usp=drive_link&ouid=112960388469934455514&rtpof=true&sd=true" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+            </div>
+        </article>
+
+        <!-- Projeto 4 -->
+        <article class="project-card">
+            <div class="project-image-container">
+                <img src="Meus jogos/TEch.png" alt="Spot Publicitário">
+            </div>
+            <div class="project-content">
+                <h3>Spot Publicitário para Loja Tecnológica</h3>
+                <p>Proposta comercial e apresentação multimédia elaborada para o lançamento simulado de uma loja de equipamento tecnológico, focando na proposta de valor, atendimento ao cliente e comercialização de componentes informáticos.</p>
+                <span class="project-tag">Publicidade & Negócios</span>
+                <a href="https://docs.google.com/presentation/d/1G7L3QP3apd9aUHjuoEFBVI4Rr7" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- =========================
+    MÚSICA & REDES SOCIAIS
+========================= -->
+<section class="music" id="music">
+    <div class="section-title">
+        <h2>Música & Expressão Criativa</h2>
+        <p>A paixão pelos instrumentos, a criação sonora e a minha presença digital</p>
+    </div>
+    
+    <div class="music-intro">
+        <h3>A Minha Jornada Musical & Criatividade Sonorizada</h3>
+        <p>
+            A música sempre foi muito mais do que uma simples atividade de lazer na minha vida; representa uma linguagem universal através da qual expresso emoções, ideias e visões do mundo. A minha paixão por instrumentos musicais despertou desde muito cedo, mas foi na guitarra que encontrei o meio perfeito para traduzir os meus pensamentos em melodias e harmonias marcantes. Desde os primeiros acordes até à execução de solos elaborados, a guitarra ensinou-me que a constante prática e o perfeccionismo conduzem à verdadeira maestria.
+        </p>
+        <p>
+            Com o avançar dos anos, aprofundei de forma autodidata e prática o estudo do instrumento, navegando por uma vasta panóplia de estilos musicais. Sinto-me particularmente atraído pela cadência e ritmo contagiante do Kompa e do Modern Zouk, pela energia pura e distorção do Rock, e pela precisão técnica e moderna das produções de EDM e Pop. Para além da guitarra, exploro ativamente a interpretação vocal, os arranjos de estúdio e a gravação de temas originais e covers, experimentando novas texturas sonoras e técnicas de mistura.
+        </p>
+        <p>
+            Existe uma sinergia impressionante entre a música e o suporte informático: ambos exigem análise lógica, perceção detalhada de estrutura e capacidade de resolver problemas em tempo real. O mesmo rigor que aplico para encontrar uma avaria num circuito de computador é aplicado para acertar o tempo de um compasso ou afinar uma linha de harmonia. Partilhar esta arte nas redes sociais como o TikTok e o YouTube permite-me conectar com outras pessoas que partilham do mesmo gosto pela boa música.
+        </p>
+    </div>
+
+    <!-- =========================
+        INSPIRAÇÕES & LOCAIS DE APRENDIZADO
+    ========================= -->
+    <div class="music-inspiration-grid">
+        <div class="inspiration-card">
+            <h4>🎸 Referências & Estilos Preferidos</h4>
+            <ul class="inspiration-list">
+                <li><strong>Influências do Instrumento:</strong> Grandes nomes da guitarra elétrica e acústica no universo do Rock, Kompa, Zouk e ritmos afro-caribenhos.</li>
+                <li><strong>Gêneros Musicais:</strong> Fusões inovadoras entre sonoridades tropicais contemporâneas, arranjos de guitarra limpos ou com efeitos e música eletrónica moderna.</li>
+                <li><strong>Trabalhos de Destaque:</strong> Produção contínua de covers vocais e instrumentais de clássicos e sucessos atuais nas redes sociais.</li>
+            </ul>
+        </div>
+
+        <div class="inspiration-card">
+            <h4>🎼 Métodos de Prática & Apresentação</h4>
+            <ul class="inspiration-list">
+                <li><strong>Estudo e Técnica:</strong> Treino diário de perceção auditiva, dedilhado, escalas musicais, precisão rítmica e afinação de estúdio.</li>
+                <li><strong>Performances ao Vivo:</strong> Participação em recitais académicos, eventos culturais, cerimónias e atuações ao vivo com grupos locais.</li>
+                <li><strong>Criação de Conteúdo:</strong> Edição de áudio e vídeo orientada para partilha contínua de conteúdos no YouTube e TikTok.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="music-media-grid">
+        <div class="music-media-card">
+            <h4>Galeria Musical</h4>
+            <div class="photo-gallery-grid-two">
+                <div class="gallery-slot">
+                    <img src="Meus jogos/Pequeno guitarrista.jpeg" alt="Kelvin na Música">
+                </div>
+                <div class="gallery-slot">
+                    <img src="Meus jogos/Guitarhero.jpeg" alt="Kelvin com Guitarra">
+                </div>
+            </div>
+            <p style="color: var(--text-muted); font-size: 14px; text-align: center;">Registos fotográficos durante ensaios e sessões de prática de guitarra.</p>
+        </div>
+
+        <div class="music-media-card">
+            <h4>Vídeos & Performance</h4>
+            <div class="video-slot">
+                <img src="Meus jogos/ANel.jpeg" alt="Vídeo de Música">
+                <span class="video-slot-label">Apresentação ao Vivo</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 14px; text-align: center;">Captação de gravações e atuações musicais no palco.</p>
+        </div>
+    </div>
+
+    <div class="social-grid">
+        <!-- Cartão TikTok -->
+        <article class="social-card">
+            <div class="social-image-container">
+                <img src="Meus jogos/Kelvin tiktok.jfif" alt="TikTok de Kelvin">
+            </div>
+            <div class="project-content">
+                <h3>Perfil no TikTok</h3>
+                <p>Acompanha os meus vídeos curtos, excertos de solos na guitarra, bastidores de gravações, covers rápidos e momentos descontraídos do quotidiano.</p>
+                <span class="project-tag">@kelvincovers2026</span>
+                <a href="https://www.tiktok.com/@kelvincovers2026" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Perfil</a>
+            </div>
+        </article>
+
+        <!-- Cartão YouTube -->
+        <article class="social-card">
+            <div class="social-image-container">
+                <img src="Meus jogos/Kelvin Youtube.jfif" alt="Canal do YouTube de Kelvin">
+            </div>
+            <div class="project-content">
+                <h3>Canal no YouTube</h3>
+                <p>Assiste aos meus vídeos completos, performances completas na guitarra, produções musicais elaboradas e projetos de áudio de alta qualidade.</p>
+                <span class="project-tag">Kelvin Nhantumbo</span>
+                <a href="https://www.youtube.com" class="btn btn-secondary edu-btn" target="_blank" rel="noopener noreferrer">Visitar Canal</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- =========================
+    CONTACTO
+========================= -->
+<section class="contact" id="contact">
+    <div class="section-title">
+        <h2>Vamos Conversar?</h2>
+        <p>Estou disponível para oportunidades profissionais em TI, colaborações musicais ou consultoria técnica</p>
+    </div>
+    <p>Seja para discutir um projeto de suporte informático, desenvolvimento web ou uma parceria musical, envia-me uma mensagem através do endereço de correio eletrónico abaixo:</p>
+    <a href="mailto:kelvinnhantumbo555@gmail.com" class="contact-email">kelvinnhantumbo555@gmail.com</a>
+    <p style="color: var(--text-muted); font-size: 15px; margin-top: 15px;">Maputo, Moçambique</p>
+</section>
+
+<!-- =========================
+    BOTÕES FLUTUANTES (WHATSAPP & INSTAGRAM)
+========================= -->
+<div class="floating-buttons">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/258848308155" class="float-btn btn-whatsapp" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/nhantas_boy2026?stkn=cW9tanZydXhiZjVr&utm_source=qr" class="float-btn btn-instagram" target="_blank" rel="noopener noreferrer" title="Seguir no Instagram">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+</div>
+
+<!-- =========================
+    FOOTER
+========================= -->
+<footer>
+    <p>&copy; 2026 Kelvin Salvador Lemos Nhantumbo. Todos os direitos reservados. | Suporte Informático & Eletricidade Industrial (ITC)</p>
+</footer>
+
+</body>
+</html>
